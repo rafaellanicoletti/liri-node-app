@@ -128,3 +128,26 @@ var doWhatItSays = function(){
     });
 };
 
+//Function for determine which command is executed
+
+var pick = function(caseData, functionData) { 
+    switch (caseData){
+    case "concert-this":
+        getMyBands(functionData);
+        break;
+    
+    case "spotify-this-song":
+        getSpotify(functionData);
+        break;
+    
+    case "movie-this":
+        getMeMovie(functionData);
+        break;
+
+    case "do-what-it-says":
+        doWhatItSays();
+        break;
+        default:
+        console.log("LIRI doesn't know that");
+    }
+};
