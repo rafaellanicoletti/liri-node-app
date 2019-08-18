@@ -151,3 +151,10 @@ var pick = function(caseData, functionData) {
         console.log("LIRI doesn't know that");
     }
 };
+
+var runThis = function(argOne, argTwo) { 
+    pick(argOne,argTwo);
+};
+
+//2 process
+runThis(process.argv[2], process.argv.slice(3).join(" "));
