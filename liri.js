@@ -84,3 +84,30 @@ var getMyBands = function(artist) {
 //why some parenthesis end with ; and other dont? 
 
 
+//Movie search 
+
+var getMeMovie= function(movieName){
+    if (movieName === undefined) {
+        movieName = "Pride and Prejudice";
+    }
+
+  var urlHit = 
+    "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=full&tomatoes=true&apikey=trilogy";
+  
+   axios.get(urlHit).then(
+       function(response) {
+           var jsonData = response.data;
+
+      console.log("title: " + jsonData.Title);
+      console.log("Year: "+ jsonData.Year);
+      console.log("Rated: " + jsonData.Rated);
+      console.log("IMDB Rating: " + jsonData.imdbRating);
+      console.log("Country: " + jsonData.Country); 
+      console.log("Language: " + jsonData.Language);
+      console.log("Plot: " + jsonData.Plot);
+      console.log("Actors: " + jsonData.Actors);
+      console.log("Rotten Tomatoes Rating: " + jsonData.Ratings[1].Value);
+      }
+   );
+
+};
